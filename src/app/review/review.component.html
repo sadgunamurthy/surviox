@@ -1,0 +1,120 @@
+<!-- <p>review works!</p>
+
+<div class="container">
+
+  <h1>User Registration</h1>
+
+  <form>
+
+      <div class="form-group">
+
+          <label for="firstname">FirstName</label><br>
+
+          <input type="text" name="firstname" class = "form-control" ngModel>
+
+      </div>
+
+      <pre></pre>
+
+      <div class="form-group">
+
+          <label for="lastname">LastName</label><br>
+
+          <input type="text" name="lastname" class = "form-control" ngModel>
+
+      </div>
+
+      <pre></pre>
+
+      <div class="form-group">
+
+          <label for="email">EmailID</label><br>
+
+          <input type="text" name="email" class = "form-control" ngModel>
+
+      </div>
+
+      <pre></pre>
+
+      <div class="form-group">
+
+          <label for="password">Password</label><br>
+
+          <input type="text" name="password" class = "form-control" ngModel>
+
+      </div>
+
+      <pre></pre>
+
+      <button class="btn btn-primary" type="submit">Submit</button>
+
+  </form>
+
+</div>
+ -->
+
+<!-- <img src="assets/images/cover.jpg"> -->
+
+<!-- <button (click)="incrementCounter($event)">Click Me</button>
+<p>Counter: {{ counter }}</p> -->
+
+<!-- <h1>{{ username }}</h1>
+<span>Change Name: </span><input [(ngModel)]="username">
+<h3>Posts: {{ totalPosts }}</h3>
+<ul>
+<hr/>
+<div *ngFor="let post of allPosts; let i=index">
+  <button (click)="deletePost(i)">DELETE</button>
+  <h6>{{ post.title }}</h6>
+  <p>{{ post.body }}</p>
+  <hr/>
+</div>
+</ul> -->
+
+<!-- <div id="myComponent">
+  <h2>Title</h2>
+  <p>Content</p>
+  <button id="myButton">Click Me</button>
+</div> -->
+<h1>Angular  Example</h1>
+<div>
+    If your component relies on inputs, outputs, or services
+    provided by its parent component or higher in the component
+    hierarchy, you may need to create a test host component to 
+    provide these dependencies
+</div>
+
+
+<button class="check" (click)="toggleCheckbox()">Toggle Checkbox</button>
+<div *ngIf="showCheckbox">
+  <label><input type="checkbox"> Checkbox</label>
+</div>
+
+<div>
+  <input type="file" multiple (change)="onFileSelected($event)">
+  <button (click)="onUpload()" [disabled]="!isFileSelected">Upload</button>
+</div>
+<!-- (change)="onColorChange($event)" [(ngModel)]="selectedColor" -->
+
+<select (change)="onColorChange($event)" [(ngModel)]="selectedColor"  >
+  <option *ngFor="let color of color" [value]="color">{{ color }}</option>
+</select>
+
+<!-- <p>You selected: {{ selectedColor }}</p> -->
+
+<div [ngSwitch]="selectedColor">
+  <div *ngSwitchCase="'red'">You selected red color</div><br>
+  <div *ngSwitchCase="'blue'">You selected blue color</div>
+  <div *ngSwitchCase="'green'">You selected green color</div>
+  <div *ngSwitchDefault>You selected a color other than red, blue, or green</div>
+</div>
+
+<p>The current date is: {{ myDate | date }}</p>
+
+<p>The current date is: {{ myDate | date: 'short' }}</p>
+
+<!-- Display date in full date/time format -->
+<p>The current date is: {{ myDate | date: 'full' }}</p>
+
+<!-- Display date in a custom format -->
+<p>The current date is: {{ myDate | date: 'dd/MM/yyyy' }}</p>

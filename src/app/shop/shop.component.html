@@ -1,0 +1,45 @@
+<div>
+  <button (click)="showForm = true">Add Item</button>
+</div>
+
+<form [formGroup]="itemForm" *ngIf="showForm" class="first">
+  <div class="box"> 
+    <input type="text" formControlName="item_name" placeholder="Name" required>
+    <div *ngIf="itemForm.get('item_name')?.errors?.required && itemForm.get('item_name')?.touched" class="error-message">Name is required</div>
+    <div *ngIf="itemForm.get('item_name')?.errors?.minlength && itemForm.get('item_name')?.touched" class="error-message">Name must be at least 8 characters long</div>
+    <div *ngIf="itemForm.get('item_name')?.errors?.pattern && itemForm.get('item_name')?.touched" class="error-message">Only alphabets are allowed in the name</div>
+    
+    <input type="text" formControlName="item_image" placeholder="Image URL" required>
+    <div *ngIf="itemForm.get('item_image')?.errors?.required && itemForm.get('item_image')?.touched" class="error-message">Image URL is required</div>
+    <div *ngIf="itemForm.get('item_image')?.errors?.pattern && itemForm.get('item_image')?.touched" class="error-message">Invalid URL format</div>
+
+    <textarea formControlName="item_description" placeholder="Description"></textarea>
+    <div *ngIf="itemForm.get('item_description')?.errors?.required && itemForm.get('item_description')?.touched" class="error-message">Description is required</div>
+    
+    <input type="text" formControlName="item_price" placeholder="Price" required>
+    <div *ngIf="itemForm.get('item_price')?.errors?.required && itemForm.get('item_price')?.touched" class="error-message">Price is required</div>
+    <div *ngIf="itemForm.get('item_price')?.errors?.min && itemForm.get('item_price')?.touched" class="error-message">Price must be at least 0</div>
+</div>
+
+
+  <button (click)="addContact()">Add Contacts</button>
+
+  <div formArrayName="contacts" style="margin-bottom:20px">
+     <div *ngFor="let control of contacts.controls; let i=index" class="second">
+      <button class="butt" (click)="deleteContact(i)">Delete</button>
+        <div class="box" [formGroupName]="i">
+          <input type="text" formControlName="item_number" placeholder="Number" />
+          <div *ngIf="control.get('item_number')?.errors?.required && control.get('item_number')?.touched" class="error-message">Phone Number is required</div>
+          <div *ngIf="control.get('item_number')?.errors?.pattern && control.get('item_number')?.touched" class="error-message">Invalid Phone Number</div>
+          <div *ngIf="control.get('item_number')?.errors?.minlength && control.get('item_number')?.touched" class="error-message">Phone Number must be 10 digits long</div>
+          <div *ngIf="control.get('item_number')?.errors?.maxlength && control.get('item_number')?.touched" class="error-message">Phone Number must be 10 digits long</div>
+
+          <input type="text" formControlName="item_type" placeholder="Type" />
+          <div *ngIf="control.get('item_type')?.errors?.required && control.get('item_type')?.touched" class="error-message">Type is required</div>
+          <div *ngIf="control.get('item_type')?.errors?.minlength && control.get('item_type')?.touched" class="error-message">Type must be at least 3 characters long</div>
+        </div>
+    </div>
+  </div>
+  <button type="submit" class="fourth" (click)="onSubmit()">Submit</button>
+</form>
+<pre>{{itemForm.value | json }}</pre>

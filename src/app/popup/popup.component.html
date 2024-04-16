@@ -1,0 +1,13 @@
+<!-- <p>popup works!</p> -->
+<div class="pop">
+    <button (click)="openPopup()">Open Popup</button>
+</div>
+<div class="overlay" *ngIf="isOpen" (click)="closePopup()">
+<!-- <div class="popup-overlay" (click)="closePopup()"> -->
+    <div class="content">
+      <!-- Content of your popup goes here -->
+      
+      <h2>Popup Content</h2>
+      <p>This is the content of the popup.</p>
+    </div>
+</div>

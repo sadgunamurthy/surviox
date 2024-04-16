@@ -1,0 +1,113 @@
+<p>queue works!</p>
+<h1>Angular Table Example</h1>
+  
+  <!-- <app-review></app-review> -->
+  <mat-card class="card">
+    <!-- <ul> -->
+      <!-- <input type="text" placeholder="Search..." class="sear" ><div class="line"></div> -->
+    <li class="one" *ngFor="let item of items">{{ item }}</li>
+      <!-- </ul> -->
+       
+      <input type="text" placeholder="Search..." class="sear" ><div class="line"></div>
+      <button (click)="addRow()" class="click">Add Row</button>
+      <button (click)="addColumn()">Add Column</button>
+      
+  <table>
+    <!-- <thead> -->
+      <tr>
+       
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Country</th>
+        <th>delete</th>
+       
+        <th *ngFor="let header of headers">{{ header }}</th>
+      </tr>
+    <!-- </thead> -->
+    <!-- <tbody> -->
+      <tr *ngFor="let row of data">
+        <td>{{ row.ID }}</td>
+        <td>{{ row.Name }}</td>
+        <td>{{ row.Age }}</td>
+        <td>{{ row.Gender }}</td>
+        <td>{{ row.Country }}</td>
+        <td>
+          <button mat-icon-button (click)="deleteItem(row)">
+            <mat-icon color="warn">delete</mat-icon>
+          </button>
+        </td>
+        <td *ngFor="let column of columns">{{ column }}</td>
+        
+      </tr>
+      <!--  -->
+    <!-- </tbody> -->
+    
+  </table>
+  <div>
+    <h2>Select Your Gender</h2>
+    <label>
+      <input type="radio" name="gender" [(ngModel)]="selectedGender" [value]="'male'">
+      Male
+    </label>
+    <label>
+      <input type="radio" name="gender" [(ngModel)]="selectedGender" [value]="'female'">
+      Female
+    </label>
+  </div>
+  <p>You selected: {{ selectedGender }}</p>
+  <!-- <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of tableData">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+      </tr>
+    </tbody>
+  </table> -->
+ 
+
+  <div>
+    <!-- Use property binding to set the src attribute of the image -->
+    <img [src]="imageUrl" alt="My Image">
+  </div>
+</mat-card>
+<div class="add"><button (click)="handleClick()">Click me!</button>
+  <div >
+ 
+    <p>Name: <input type="text" [(ngModel)]="name"></p>
+    <p>You wrote: {{ name }}</p>
+    
+    </div>
+
+    <!-- <div>
+      <label for="phoneNumber">Phone Number:</label>
+      <input type="text" id="phoneNumber" name="phoneNumber" [(ngModel)]="phoneNumber" pattern="[0-9]*" />
+      <p *ngIf="phoneNumber.length>0 && !isPhoneNumberValid()">Please enter a valid phone number.</p>
+    </div> -->
+
+    <form [formGroup]="nameForm"  >
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" formControlName="name" >
+        <div *ngIf="f.name.errors?.required">Name is required.</div>
+        <div *ngIf="f.name.errors?.maxlength">Name should be at most 8 characters.</div>
+        <div *ngIf="f.name.errors?.pattern">Only alphabets are allowed in the name.</div>
+      </div>
+    </form>
+
+    <form [formGroup]="numberForm">
+      <div>
+        <label for="number">Number:</label>
+        <input type="text" id="number" name="number" formControlName="number" />
+        <div *ngIf="num.number.errors?.required">Number is required.</div>
+        <div *ngIf="num.number.errors?.maxlength">Name should be at most 10 characters.</div>
+        <div *ngIf="num.number.errors?.pattern">Only numbers are allowed in the name.</div>
+      </div>
+    </form>

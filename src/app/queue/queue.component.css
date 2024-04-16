@@ -1,0 +1,81 @@
+.first{
+    height: 150px;
+    width: 150px;
+    color: red;
+    text-align: center;
+    background-color: blue;
+    font-size: 20px;
+    border: 5px solid yellow;
+    float: left;
+    margin: 20px;
+    }
+    .second{
+    height: 150px;
+    width: 150px;
+    color: red;
+    text-align: center;
+    background-color: green;
+    font-size: 20px;
+    border: 5px solid yellow;
+    float: left;
+    margin: 20px;
+    }
+    
+    table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+      }
+      
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      
+      th {
+        background-color: #f2f2f2;
+      }
+    
+    .card{
+      box-shadow: 0px 3px 8px blue;
+      border-radius: 0px;
+      margin-left: 100px;
+      margin-top: 20px;
+      width: 80vw;
+      height: 300px;
+      margin-bottom: 40px;
+      overflow: auto;
+    }
+
+    .click{
+      /* margin-top: 100px; */
+      margin-right: 100px;
+    }
+    
+    .add{
+      margin-left: 25px;
+      padding-right: 150px;
+      margin-top: 30px;
+      margin-bottom: 100px;
+    }
+    .button-one{
+    margin-left: 100px;
+    font:normal normal medium 14px Roboto;
+    width: 200px;
+    height: 20px;
+    }
+    
+    .one{
+      float: left;
+    }
+    .sear{
+      /*border-radius: 2px white; */
+      border: none; /* Remove the border */
+  outline: none;
+    }
+    .line {
+      border-top: 1px solid black; /* Adjust thickness and color as needed */
+      margin: 20px 0;
+      width: 0%; /* Adjust margin as needed */
+    }

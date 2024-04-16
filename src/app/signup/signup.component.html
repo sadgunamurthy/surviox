@@ -1,0 +1,62 @@
+<form [formGroup]="reactiveForm" >
+ 
+    <!-- <p>
+      <label for="firstname">First Name </label>
+      <input type="text" id="firstname" name="firstname" formControlName="firstname">
+    </p> -->
+    <div>
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" name="firstname" formControlName="firstname" >
+        <div *ngIf="numb.firstname.errors?.required">Name is required.</div>
+        <div *ngIf="numb.firstname.errors?.maxlength">Name should be at most 8 characters.</div>
+        <div *ngIf="numb.firstname.errors?.pattern">Only alphabets are allowed in the name.</div>
+      </div>
+ 
+    <div>
+      <label for="lastname">Last Name </label>
+      <input type="text" id="lastname" name="lastname" formControlName="lastname">
+      <div *ngIf="nu.lastname.errors?.required">Name is required.</div>
+      <div *ngIf="nu.lastname.errors?.maxlength">Name should be at most 8 characters.</div>
+      <div *ngIf="nu.lastname.errors?.pattern">Only alphabets are allowed in the name.</div>
+    </div>
+ 
+    <div>
+      <label for="email">Email </label>
+      <input type="text" id="email" name="email" formControlName="email">
+      <div *ngIf="n.email.errors?.required">Name is required.</div>
+      <div *ngIf="n.email.errors?.maxlength">Name should be at most 8 characters.</div>
+      <div *ngIf="n.email.errors?.pattern">Only alphabets are allowed in the name.</div>
+    </div>
+ 
+    <div formGroupName="addressForm">
+ 
+      <p>
+        <label for="address">Address</label>
+        <input type="text" class="form-control" name="address" formControlName="address">
+      </p>
+ 
+      <p>
+        <label for="city">City</label>
+        <input type="text" class="form-control" name="city" formControlName="city">
+      </p>
+ 
+      <p>
+        <label for="state">State</label>
+        <input type="text" class="form-control" name="state" formControlName="state">
+      </p>
+ 
+    </div>
+ 
+    <button>Submit</button>
+ 
+  </form>
+  <!-- <app-popup></app-popup> -->
+  <mat-form-field>
+    <mat-label>Select an Option</mat-label>
+    <mat-select [(ngModel)]="selectedOption">
+      <mat-option *ngFor="let option of options" [value]="option.value">
+        <mat-icon>{{ option.icon }}</mat-icon> <!-- Material icon -->
+        {{ option.label }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>

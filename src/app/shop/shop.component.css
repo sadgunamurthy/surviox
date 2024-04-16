@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;   
+} 
+.first{
+    border: 2px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 60%;
+    margin: auto;
+}
+.box{
+    width: 500px;
+    margin-bottom: 20px;
+}
+.box input[type="text"],
+.box textarea {
+  width: 100%;
+  margin-bottom: 10px; 
+}
+.fourth{
+    width: 150px;
+    height: 30px;
+    border-color: pink;
+    background-color: lightgreen;
+    border-radius: 20px;
+}
+.second{
+    border:1px dotted #333;
+    padding: 20px;
+    margin-bottom: 10px;
+    position: relative;
+    padding-top: 35px;
+}
+.butt{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: red;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
