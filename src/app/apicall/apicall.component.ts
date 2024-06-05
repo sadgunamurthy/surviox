@@ -9,102 +9,57 @@ import { ProductService } from '../product.service';
 export class ApicallComponent implements OnInit {
   ProductData:any;
   
-  // constructor(public products:ProductService) { }
-  constructor() { }
+  constructor(public products:ProductService) { }
+ 
   ngOnInit(){
-    // this.getproducts();
-    // this.postproducts();
-    // this.putproducts();
-    // this.deleteproducts(id);
-  // this.getprod();
-  // this.getpro();
-  //   this.postpro();
-  //  this.putprod();
-  // this.deleteprod();
+    this.getproducts();
+    this.postproducts();
+    this.putproducts();
+    const postId = 1; 
+    this.deleteproducts(postId);
+ 
   }
 
-  //    getproducts() {
-  //     this.products.getMethod().subscribe((response:any) =>{
-  //     console.log('api called::',response)
-  //     this.ProductData=response;
-  //     console.log('api array::',this.ProductData)
-  //   });
+     getproducts() {
+      this.products.getMethod().subscribe((response:any) =>{
+      console.log('api called::',response)
+      this.ProductData=response;
+      console.log('api array::',this.ProductData)
+    });
+ 
+    }
 
-  //  }
-
-  //   postproducts() {
+    postproducts() {
      
-  //     this.products.postMethod().subscribe((response:any) =>{
-  //     console.log('api called::',response)
-  //     this.ProductData=response;
-  //     console.log('api array::',this.ProductData)
-  //   });
-
-  //  }
-
-  //  putproducts() {
+      this.products.postMethod().subscribe((response:any) =>{
+      console.log('api post::',response)
+      this.ProductData=response;
+      console.log('api post1::',this.ProductData)
+    });
+  }
+   putproducts() {
      
-  //   this.products.putMethod().subscribe((response:any) =>{
-  //   console.log('api called::',response)
-  //   this.ProductData=response;
-  //   console.log('api array::',this.ProductData)
-  // });
-
-  //  deleteproducts(id: number) {
-     
-  //   this.products.deleteMethod(id).subscribe((response:any) =>{
-  //   console.log('api called::',response)
-  //   this.ProductData=response;
-  //   console.log('api array::',this.ProductData)
-  // });
-
-
-//  }
-//    getprod(): void {
-//     this.products.getprod().subscribe((response:any) =>{
-//       console.log('api called::',response)
-//       this.ProductData=response.products;
-//       console.log('api array::',this.ProductData)
-//     });
-//    }
-//    getpro(): void {
-//     this.products.getpro().subscribe((response:any) =>{
-//       console.log('api called::',response)
-//       this.ProductData=response.products;
-//       console.log('api array::',this.ProductData)
-//     });
-//   }
-
-//     postpro(): void {
-//     let data={
-//       id:2,
-//       title:"hello",
-//       name:"nani"
-//     }
-//     this.products.addProduct(data).subscribe((response:any) =>{
-//       console.log('api called::',response)
-      
-//     })
-//   }
-// }
-//     putprod(): void {
-//     let user={
-//       // id:2,
-//       title:"rrr",
-//       brand:"ram"
-//     }
-//     this.products.putprod(user, 123).subscribe((response:any) =>{
-//       console.log('api called::',response)
-      
-//     });
-//   }
-//     deleteprod(): void {
-//     this.products.deleteprod( 123).subscribe((response:any) =>{
-//       console.log('api called::',response)
-      
-//     });
-//   }
-// }
-
-
+    this.products.putMethod().subscribe((response:any) =>{
+    console.log('api put::',response)
+    this.ProductData=response;
+    console.log('api put1::',this.ProductData)
+  });
 }
+
+
+   deleteproducts(id: number) {
+     
+    this.products.deleteMethod(id).subscribe((response:any) =>{
+    console.log('api delete::',response)
+    this.ProductData=response;
+    console.log('api delete1::',this.ProductData)
+  });
+
+   }
+
+  }
+
+
+
+
+
