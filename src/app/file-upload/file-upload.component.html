@@ -1,12 +1,5 @@
-<!-- <p>file-upload works!</p> -->
-<!-- <div class="upload-container">
-    <input type="file" id="fileInput" (change)="onFileSelected($event)" style="display: none;">
- 
-  </div> -->
-  
-
-  <div class="container">
-    <h2>File Management</h2>
+ <div class="container">
+  <h2>File Management</h2>
   
     <div>
       <input type="file" (change)="onFileSelected($event)" multiple />
@@ -17,9 +10,9 @@
       <ul>
         <li *ngFor="let file of files; let i = index">
           {{ file.name }}
-          <button (click)="viewFile(file)">View</button>
+          <button (click)="viewFile(file)"><mat-icon class="searc">home</mat-icon>View</button>
           <button (click)="downloadFile(file)" ><mat-icon class="searc">download</mat-icon> Download</button>
-          <button (click)="deleteFile(i)">Delete</button>
+          <button (click)="deleteFile(i)"><mat-icon class="searc">delete</mat-icon>Delete</button>
         </li>
       </ul>
     </div>
