@@ -47,31 +47,31 @@ export class ShopComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.fetchData();
-    this.addData();
-    this.deleteproduct();
+    // this.fetchData();
+    // this.addData();
+    // this.deleteproduct();
   }
 
-  fetchData() {
-    console.log("Fetching data...");
-    this.products.getData().subscribe(data => {
-      console.log("Fetched data:", data);
-      this.itemForm.patchValue(data);
-    });
-  }
+  // fetchData() {
+  //   console.log("Fetching data...");
+  //   this.products.getData().subscribe(data => {
+  //     console.log("Fetched data:", data);
+  //     this.itemForm.patchValue(data);
+  //   });
+  // }
 
-  addData() {    
-    this.products.postData().subscribe(response => {
-      console.log('Response:', response);      
-    }, error => {
-      console.error('Error:', error);      
-    });
-  }
+  // addData() {    
+  //   this.products.postData().subscribe(response => {
+  //     console.log('Response:', response);      
+  //   }, error => {
+  //     console.error('Error:', error);      
+  //   });
+  // }
 
-  deleteproduct(): void {
-      this.products.deleteData(123).subscribe((response:any) =>{
-        console.log('api called::',response)        
-      });
-    }
+  // deleteproduct(): void {
+  //     this.products.deleteData(123).subscribe((response:any) =>{
+  //       console.log('api called::',response)        
+  //     });
+  //   }
 }
 

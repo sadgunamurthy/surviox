@@ -1,0 +1,37 @@
+<p>topics works!</p>
+
+<!-- <app-signin [Childmsg]="Parentmsg"></app-signin> -->
+
+<!-- post form sample example using data binding-->
+
+<p>{{fromChild}}</p>
+<button (click)="sendmessage()">Click</button>
+<div class="first">
+<input type="text" placeholder="post Title" [(ngModel)]="postTitle">  
+<br><br>
+<textarea cols="30" rows="10" placeholder="post Details" [(ngModel)]="postDetails"></textarea>
+<br><br>
+<input type="text" placeholder="image URL" [(ngModel)]="imageURL">
+<br><br>
+<input type="text" placeholder="post URL" [(ngModel)]="postURL">
+<br><br>
+<input type="checkbox" [(ngModel)]="AddBackground">Add Background
+</div>
+
+<div class="second">
+    <h1 ><span [class.add-background]="AddBackground">{{postTitle}}</span></h1>
+    <p>{{postDetails}}</p>
+    <img [src]="imageURL" >
+    <a [href]="postURL" target="_blank"  [style.display]="postURL ? 'block' : 'none' ">More Details</a>
+</div>
+
+<!-- Fetch data for object Array -->
+<button (click)="addElement()">Add Element</button>
+<ul>
+    <li *ngFor="let post of objectArray">{{post.title}}
+    <button (click)="deleteElement(index)">Delete Element</button>
+    </li>
+    
+</ul>
+
+

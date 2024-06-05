@@ -11,7 +11,10 @@ import { SignupComponent } from './signup/signup.component';
 import { FirstComponent } from './first/first.component';
 import { ShopifyComponent } from './shopify/shopify.component';
 import { ShopComponent } from './shop/shop.component';
-
+import { TopicsComponent } from './topics/topics.component';
+import { JoblandComponent } from './jobland/jobland.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import { ApicallComponent } from './apicall/apicall.component';
 const routes: Routes = [
   { path: '', component: AppComponent },
   { path: 'review', component: ReviewComponent },
@@ -23,6 +26,10 @@ const routes: Routes = [
   { path: 'first', component: FirstComponent },
   { path: 'shopify', component: ShopifyComponent },
   { path: 'shop', component: ShopComponent },
+  { path: 'topics', component:TopicsComponent},
+  { path: 'jobland', component:JoblandComponent},
+  { path: 'file-upload', component:FileUploadComponent},
+  { path: 'apicall', component:ApicallComponent},
   { path: '**', redirectTo: 'review' }
 
    

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild,AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import{ ProductService} from './product.service';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
@@ -6,12 +6,24 @@ import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { FormControl } from '@angular/forms';
+import { TopicsComponent } from './topics/topics.component';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit,AfterViewInit{
+
+
+  // Examples for using @Input,@output,@ViewChild
+  parentmsg:string='hello from parent';
+  msg:string='';
+  outputchild:string='';
+
+  @ViewChild(TopicsComponent) childComp: any;
+
+// -----------------------------  //
   isOpen: boolean = true;
   openPopup(): void {
     this.isOpen = false;
@@ -21,8 +33,6 @@ export class AppComponent implements OnInit{
   message: string = '';
   // selectedOption: string;
 
- 
-  
     navigateToOtherPage() {
       
     }
@@ -46,8 +56,25 @@ export class AppComponent implements OnInit{
   // }
 // users:any=[];
 // getproducts:any;
+
+
+ // Examples for using @Input,@output,@ViewChild
   constructor(public products:ProductService) { 
+    console.log(this.childComp);
   }
+  ngAfterViewInit(): void {
+    // throw new Error('Method not implemented.');
+    console.log(this.childComp);
+    this.msg=this.childComp.childmsg;
+  }
+  receiveMessage($event: any){
+    // console.log($event)
+    this.outputchild=$event;
+  }
+
+// ----------------------------------------------- //
+
+
   ngOnInit() {
   // this.getproductsDa();
   // this.getprod();
@@ -56,6 +83,11 @@ export class AppComponent implements OnInit{
   //  this.putprod();
   // this.deleteprod();
   }
+
+  // ngAfterViewInit(){
+
+  // }
+
   //   getproductsDa(): void {
   //   this.products.getproducts().subscribe((response:any) =>{
   //     console.log('api called::',response)

@@ -1,0 +1,10 @@
+.first,
+.second
+{
+    margin-top: 50px;
+    text-align: center;
+}
+.add-background{
+    padding:10px;
+    background-color:red;
+}

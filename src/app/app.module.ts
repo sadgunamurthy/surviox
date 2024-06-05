@@ -30,7 +30,14 @@ import { SignupComponent } from './signup/signup.component';
 import { FirstComponent } from './first/first.component';
 import { ShopifyComponent } from './shopify/shopify.component';
 import { ShopComponent } from './shop/shop.component';
-
+import { TopicsComponent } from './topics/topics.component';
+import { JoblandComponent } from './jobland/jobland.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import { ApicallComponent } from './apicall/apicall.component';
+import { ProductService } from './product.service';
+import { SharedService } from './shared.service';
+import { DataService } from './data.service';
 // import { MyPipePipe } from './my-pipe.pipe';
 // import { Pipe, PipeTransform } from '@angular/core';
 // import { HttpClient, HttpErrorResponse } from '@angular/common/http';
@@ -53,7 +60,11 @@ import { ShopComponent } from './shop/shop.component';
     SignupComponent,
     FirstComponent,
     ShopifyComponent,
-    ShopComponent
+    ShopComponent,
+    TopicsComponent,
+    JoblandComponent,
+    FileUploadComponent,
+    ApicallComponent
     
     // MyPipePipe
     // MatDatepickerModule
@@ -61,12 +72,14 @@ import { ShopComponent } from './shop/shop.component';
     
   ],
   imports: [
-    BrowserModule,MatCardModule ,FormsModule,ReactiveFormsModule, AppRoutingModule, BrowserAnimationsModule,RouterModule,
+    BrowserModule,MatCardModule ,FormsModule,MatToolbarModule,ReactiveFormsModule, AppRoutingModule, BrowserAnimationsModule,RouterModule,
     MatDatepickerModule,MatNativeDateModule,MatFormFieldModule,MatInputModule,MatIconModule,HttpClientModule,MatSelectModule
     // Pipe// HttpClient,HttpErrorResponse
 
   ],
-  providers: [],
+  providers: [ProductService,
+    SharedService,
+  DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

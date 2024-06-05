@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 })
 export class SigninComponent implements OnInit {
 
+  @Input() Childmsg:string | undefined;
 
   dynamicForm!: FormGroup;
   formFields: any[] = [
