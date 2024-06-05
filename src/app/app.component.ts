@@ -5,7 +5,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { TopicsComponent } from './topics/topics.component';
 
 @Component({
@@ -50,7 +50,7 @@ export class AppComponent implements OnInit,AfterViewInit{
   ProductData:any;
   tableData: any[] = [];
   
-  dateControl = new FormControl(new Date());
+  dateControl = new UntypedFormControl(new Date());
   // constructor(public httpClient:HttpClient) {
   //  this.ProductData= this.httpClient.get("https://dummyjson.com/products")
   // }

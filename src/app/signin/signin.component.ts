@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-signin',
@@ -10,7 +10,7 @@ export class SigninComponent implements OnInit {
 
   @Input() Childmsg:string | undefined;
 
-  dynamicForm!: FormGroup;
+  dynamicForm!: UntypedFormGroup;
   formFields: any[] = [
     { name: 'firstName', label: 'First Name', type: 'text', required: true },
     { name: 'lastName', label: 'Last Name', type: 'text', required: true },
@@ -36,7 +36,7 @@ export class SigninComponent implements OnInit {
 
   // contactForm:FormGroup
   // surName:string='';
-  constructor(private fb:FormBuilder) { 
+  constructor(private fb:UntypedFormBuilder) { 
 
     
     // this.contactForm = this.fb.group({

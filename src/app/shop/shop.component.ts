@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormArray, AbstractControl } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators, UntypedFormArray, AbstractControl } from '@angular/forms';
 import{ ProductService} from '../product.service';
 @Component({
   selector: 'app-shop',
@@ -10,9 +10,9 @@ export class ShopComponent implements OnInit {
   showForm = true;
   data: any;
 
-  constructor(private fb: FormBuilder,public products:ProductService) { }
+  constructor(private fb: UntypedFormBuilder,public products:ProductService) { }
 
-  itemForm:FormGroup = this.fb.group({
+  itemForm:UntypedFormGroup = this.fb.group({
     item_name: ['', [Validators.required, Validators.minLength(8),Validators.pattern(/^[a-zA-Z]+$/)]],
     item_image: ['', [Validators.required, Validators.pattern('^(http|https)://[^ "]+$')]],
     item_description: ['', Validators.required],
@@ -26,7 +26,7 @@ export class ShopComponent implements OnInit {
   });
 
   get contacts(){
-    return this.itemForm.get('contacts') as FormArray;
+    return this.itemForm.get('contacts') as UntypedFormArray;
   }
 
    addContact(){

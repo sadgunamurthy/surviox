@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormArray, UntypedFormBuilder, UntypedFormControl, FormGroup, Validators } from '@angular/forms';
 import{ ProductService} from '../product.service';
 // import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -15,7 +15,7 @@ export class ShopifyComponent implements OnInit {
   // form!: FormGroup;
   form:any;
   ProductData:any;
-  constructor(private fb: FormBuilder,public products:ProductService) { }
+  constructor(private fb: UntypedFormBuilder,public products:ProductService) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -44,7 +44,7 @@ export class ShopifyComponent implements OnInit {
   // }
  
    get items(){
-    return this.form.get('items') as FormArray
+    return this.form.get('items') as UntypedFormArray
   }
 
   deleteItem(index:number){
@@ -57,7 +57,7 @@ export class ShopifyComponent implements OnInit {
 
   addItem() {
     const newItem = this.fb.group({
-      name: new FormControl('', [Validators.required, Validators.maxLength(8), Validators.pattern(/^[a-zA-Z]+$/)]),
+      name: new UntypedFormControl('', [Validators.required, Validators.maxLength(8), Validators.pattern(/^[a-zA-Z]+$/)]),
       description: ['', Validators.required],
       price: [0, [Validators.required, Validators.min(0)]],
       image: ['', Validators.required]

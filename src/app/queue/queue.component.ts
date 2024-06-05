@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-queue',
   templateUrl: './queue.component.html',
@@ -30,8 +30,8 @@ export class QueueComponent implements OnInit {
   // }
 
   isButtonClicked: boolean = false;
-  nameForm: FormGroup;
-  numberForm: FormGroup;
+  nameForm: UntypedFormGroup;
+  numberForm: UntypedFormGroup;
   // phone:any;
   // newColumn:any;
 
@@ -71,7 +71,7 @@ export class QueueComponent implements OnInit {
     }
   }
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: UntypedFormBuilder) {
     this.nameForm = this.fb.group({
       name: ['', [Validators.required, Validators.maxLength(8), Validators.pattern(/^[a-zA-Z]+$/)]]
     });
