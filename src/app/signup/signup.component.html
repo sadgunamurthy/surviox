@@ -1,9 +1,5 @@
 <form [formGroup]="reactiveForm" >
- 
-    <!-- <p>
-      <label for="firstname">First Name </label>
-      <input type="text" id="firstname" name="firstname" formControlName="firstname">
-    </p> -->
+
     <div>
         <label for="firstname">First Name</label>
         <input type="text" id="firstname" name="firstname" formControlName="firstname" >
@@ -50,7 +46,6 @@
     <button>Submit</button>
  
   </form>
-  <!-- <app-popup></app-popup> -->
   <mat-form-field>
     <mat-label>Select an Option</mat-label>
     <mat-select [(ngModel)]="selectedOption">
